@@ -1,15 +1,26 @@
+
+
 "use client"
+
 
 import { useState } from "react"
 import WorksheetCard from "../components/WorksheetCard"
 import worksheets from "../data/worksheets.json"
+const worksheetData = worksheets as Worksheet[]
+
+type Worksheet = {
+  slug: string
+  age?: string
+  audience?: string
+  category?: string
+}
 
 export default function Home() {
 
 const [audience, setAudience] = useState<string | null>(null)
 const [age, setAge] = useState<string | null>(null)
 
-const filteredWorksheets = worksheets.filter(w => {
+const filteredWorksheets = worksheetData.filter(w => {
   if (audience && w.audience !== audience) return false
   if (age && w.age !== age) return false
   return true
@@ -191,7 +202,7 @@ gap:"20px"
           gap: "30px"
         }}>
 
-          {worksheets.map(w => (
+          {worksheetData.map(w => (
             <WorksheetCard
               key={w.slug}
               slug={w.slug}
