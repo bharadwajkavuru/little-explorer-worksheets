@@ -46,7 +46,6 @@ Preview
   src={`/worksheets/${slug}.pdf`}
   width="100%"
   height="600"
-  type="application/pdf"
   style={{ border: "none" }}
   title={title}
 />
