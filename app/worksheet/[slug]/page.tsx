@@ -40,12 +40,15 @@ export default async function Page({ params }: PageProps) {
 Preview
 </h3>
 
-        <iframe
-          src={`/worksheets/${slug}.pdf`}
-          width="100%"
-          height="600"
-        />
+<p>/worksheets/{slug}.pdf</p>
 
+<iframe
+  src={`/worksheets/${slug}.pdf`}
+  width="100%"
+  height="600"
+  style={{ border: "none" }}
+  title={title}
+/>
       </div>
 
       {/* DOWNLOAD BUTTON */}
